@@ -1,47 +1,31 @@
 import React from 'react';
+import Header from './component/Header';
+import Question from './component/Question';
+import Answer from './component/Answer';
+import Description from './component/Description';
+import СontinueButton from './component/СontinueButton';
+import data from './data';
 import './App.css';
 
 function App() {
+  console.log(data);
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="header-container">
-          <h1 className="logo">songbird</h1>
-          <h2>score: 0</h2>
-        </div>
-        <div className="nav-bar">
-          <ul className="nav-list">
-            <li className="nav-link">
-              <a>1-category </a>
-            </li>
-            <li className="nav-link">
-              <a>2-category</a>
-            </li>
-            <li className="nav-link">
-              <a>3-category</a>
-            </li>
-            <li className="nav-link">
-              <a>4-category</a>
-            </li>
-            <li className="nav-link">
-              <a>5-category</a>
-            </li>
-            <li className="nav-link">
-              <a>6-category</a>
-            </li>
-          </ul>
-        </div>
-      </header>
+      <Header />
       <main className="App-main">
-        <div className="question"></div>
+        <Question />
         <div className="response-container">
-          <div className="answer-options"></div>
-          <div className="response-description"></div>
+          <Answer />
+          <Description />
         </div>
-        <button className="continue-button">next level</button>
+        <СontinueButton />
       </main>
     </div>
   );
 }
 
 export default App;
+
+// import ReactAudioPlayer from 'react-audio-player';
+// //...
+// <ReactAudioPlayer src="my_audio_file.ogg" autoPlay controls />;

@@ -1,0 +1,142 @@
+body {
+  background-color: #282c34;
+}
+.App {
+  text-align: center;
+  max-width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.App-header {
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+.logo {
+  color: white;
+}
+.score {
+  color: white;
+}
+.nav-list {
+  display: flex;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #64b5f6ad;
+  margin-top: 0;
+  padding: 0;
+}
+
+.nav-link {
+  width: 150px;
+  padding: 8px;
+  list-style-type: none;
+}
+.nav-link:hover {
+  background-color: #4443;
+  cursor: pointer;
+}
+
+.App-main {
+}
+.question-container {
+  background-color: #64b5f6ad;
+  width: 100%;
+  height: 200px;
+  display: flex;
+}
+.stub-picture {
+  width: 170px;
+  height: 140px;
+  margin: 30px;
+  border-radius: 20px;
+}
+.title-song {
+  margin-top: 30px;
+}
+.question {
+  margin: 40px;
+}
+.question-name {
+  text-align: start;
+  font-size: 20px;
+  margin-left: 22px;
+}
+.music-track {
+  outline: none;
+  width: 300px;
+}
+.music-track__question {
+  width: 500px;
+}
+
+.response-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 20px 0;
+}
+.answer-options {
+  background-color: #64b5f6ad;
+  height: 100%;
+  /* height: 300px; */
+  width: 43%;
+}
+.answer-list {
+  border: 1px solid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.answer-link {
+  border: solid 1px;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 12px 0 12px 25px;
+  text-align: left;
+}
+.answer-link:hover {
+  background-color: #4443;
+}
+.response-indicator {
+  display: inline-block;
+  background-color: #444;
+  width: 10px;
+  height: 10px;
+  margin-right: 15px;
+  border-radius: 50%;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+.indicator-err {
+  background-color: #ff00008c;
+}
+.indicator-success {
+  background-color: #008000c7;
+}
+
+.answer-card__container {
+  background-color: #64b5f6ad;
+  height: 350px;
+  width: 55%;
+}
+.answer-card {
+  display: flex;
+}
+
+.answer-card__description {
+  font-size: 16px;
+}
+
+.continue-button {
+  background-color: #64b5f6ad;
+
+  width: 100%;
+  height: 30px;
+}

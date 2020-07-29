@@ -1,0 +1,81 @@
+const data = [
+  [
+    {
+      id: 1,
+      name: 'Twocolors - Lovefool',
+      sound: '../assets/sounds/love_me.mp3',
+      image: 'Twocolors.jpg',
+    },
+    {
+      id: 2,
+      name: 'Twocolors - Lovefool',
+      sound: '../assets/sounds/love_me.mp3',
+      image: 'Twocolors.jpg',
+    },
+    {
+      id: 3,
+      name: 'Twocolors - Lovefool',
+      sound: '../assets/sounds/love_me.mp3',
+      image: 'Twocolors.jpg',
+    },
+    {
+      id: 4,
+      name: 'Twocolors - Lovefool',
+      sound: '../assets/sounds/love_me.mp3',
+      image: 'Twocolors.jpg',
+    },
+    {
+      id: 5,
+      name: 'Twocolors - Lovefool',
+      sound: '../assets/sounds/love_me.mp3',
+      image: 'Twocolors.jpg',
+    },
+    {
+      id: 6,
+      name: 'Twocolors - Lovefool',
+      sound: '../assets/sounds/love_me.mp3',
+      image: 'Twocolors.jpg',
+    },
+  ],
+  // [
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  // ],
+  // [
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  // ],
+  // [
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  // ],
+  // [
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  // ],
+  // [
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  //   { id: id, name: name, sound: sound },
+  // ],
+];
+export default data;
