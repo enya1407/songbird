@@ -5,13 +5,18 @@ import stubPicture from '../assets/image/stub-picture.jpg';
 import loveMe from '../assets/sounds/love_me.mp3';
 import ReactAudioPlayer from 'react-audio-player';
 
-function Description() {
+function Card({ userResponse }) {
+  console.log('userResponse', userResponse?.image);
   return (
     <div className="answer-card__container">
       <div className="answer-card">
-        <img src={stubPicture} className="stub-picture" alt="stub-picture" />
+        <img
+          src={userResponse?.image}
+          className="stub-picture"
+          alt="stub-picture"
+        />
         <div className="title-song">
-          <p className="question-name">******</p>
+          <p className="question-name">{userResponse.name}</p>
           <ReactAudioPlayer
             src={loveMe}
             className="music-track"
@@ -29,5 +34,4 @@ function Description() {
     </div>
   );
 }
-
-export default Description;
+export default Card;

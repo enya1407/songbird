@@ -1,34 +1,17 @@
 import React from 'react';
 import '../App.css';
+import PossibleAnswer from './PossibleAnswer';
 
-function Answer() {
+function Answer({ data, level, setUserResponse }) {
+  const addAnswerOptions = data[level].map((el, index) => {
+    return (
+      <PossibleAnswer el={el} key={el.id} setUserResponse={setUserResponse} />
+    );
+  });
+
   return (
     <div className="answer-options">
-      <ul className="answer-list">
-        <li className="answer-link">
-          <span className="response-indicator indicator-err "></span>answer1
-        </li>
-        <li className="answer-link">
-          {' '}
-          <span className="response-indicator indicator-success"></span>answer2
-        </li>
-        <li className="answer-link">
-          {' '}
-          <span className="response-indicator"></span>answer3
-        </li>
-        <li className="answer-link">
-          {' '}
-          <span className="response-indicator"></span>answer4
-        </li>
-        <li className="answer-link">
-          {' '}
-          <span className="response-indicator"></span>answer5
-        </li>
-        <li className="answer-link">
-          {' '}
-          <span className="response-indicator"></span>answer6
-        </li>
-      </ul>
+      <ul className="answer-list">{addAnswerOptions}</ul>
     </div>
   );
 }
