@@ -1,36 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './component/Header';
-import Question from './component/Question';
-import Answer from './component/Answer';
-import СontinueButton from './component/СontinueButton';
-// import data from './data';
 import { data, category } from './data';
+import ContainerForTheGame from './component/ContainerForTheGame';
+import ContainerForResults from './component/ContainerForResults';
+
 import './App.css';
-import Card from './component/Card';
 
 function App() {
-  console.log('category', category);
+  const [gameState, setGameState] = useState(true);
+
   const [gameScore, setGameScore] = useState(0);
-  const [level, setLevel] = useState(0);
-  const [userResponse, setUserResponse] = useState('');
+  const [musicCategory, setMusicCategory] = useState(0);
+  const [isFoundCorrectAnswer, setIsFoundCorrectAnswer] = useState(false);
+  const [currentElem, setCurrentElem] = useState({});
+  const [numberOfPointsPerRound, setNumberOfPointsPerRound] = useState(5);
+
+  function shuffleWords(words) {
+    const arr = [...words];
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = arr[j];
+      arr[j] = arr[i];
+      arr[i] = temp;
+    }
+    console.log(
+      'Правельный ответ в категории',
+      category[musicCategory],
+      ':',
+      arr[0].name
+    );
+    return arr[0];
+  }
+
+  useEffect(() => {
+    setCurrentElem(shuffleWords(data[musicCategory]));
+    setIsFoundCorrectAnswer(false);
+  }, [musicCategory]);
+
+  useEffect(() => {
+    if (isFoundCorrectAnswer) {
+      setGameScore(gameScore + numberOfPointsPerRound);
+    }
+  }, [isFoundCorrectAnswer]);
 
   return (
     <div className="App">
-      <Header gameScore={gameScore} category={category} level={level} />
-      <main className="App-main">
-        <Question />
-        <div className="response-container">
-          <Answer data={data} level={level} setUserResponse={setUserResponse} />
-          {userResponse ? (
-            <Card userResponse={userResponse} />
-          ) : (
-            <div className="answer-card__container instruction">
-              Listen to the player and select the artist
-            </div>
-          )}
-        </div>
-        <СontinueButton setLevel={setLevel} level={level} />
-      </main>
+      <Header
+        gameScore={gameScore}
+        category={category}
+        musicCategory={musicCategory}
+      />
+      {gameState && (
+        <ContainerForTheGame
+          setGameState={setGameState}
+          data={data}
+          musicCategory={musicCategory}
+          setMusicCategory={setMusicCategory}
+          isFoundCorrectAnswer={isFoundCorrectAnswer}
+          setIsFoundCorrectAnswer={setIsFoundCorrectAnswer}
+          currentElem={currentElem}
+          numberOfPointsPerRound={numberOfPointsPerRound}
+          setNumberOfPointsPerRound={setNumberOfPointsPerRound}
+        />
+      )}
+      {!gameState && (
+        <ContainerForResults
+          setGameState={setGameState}
+          gameScore={gameScore}
+          setGameScore={setGameScore}
+        />
+      )}
     </div>
   );
 }

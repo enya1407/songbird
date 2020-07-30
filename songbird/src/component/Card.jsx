@@ -6,7 +6,7 @@ import loveMe from '../assets/sounds/love_me.mp3';
 import ReactAudioPlayer from 'react-audio-player';
 
 function Card({ userResponse }) {
-  console.log('userResponse', userResponse?.image);
+  // console.log('userResponse', userResponse?.image);
   return (
     <div className="answer-card__container">
       <div className="answer-card">

@@ -1,13 +1,32 @@
 import React from 'react';
 import '../App.css';
+// import { Button } from 'antd';
 
-function СontinueButton({ level, setLevel }) {
+function СontinueButton({
+  setGameState,
+  musicCategory,
+  setMusicCategory,
+  setUserResponse,
+  setNumberOfPointsPerRound,
+  isFoundCorrectAnswer,
+}) {
+  const buttonStyle = isFoundCorrectAnswer
+    ? 'continue-button_active'
+    : 'continue-button';
   return (
     <button
-      variant="dark"
-      className="continue-button"
+      className={buttonStyle}
       onClick={() => {
-        setLevel(level + 1);
+        if (isFoundCorrectAnswer) {
+          if (musicCategory < 5) {
+            setMusicCategory(musicCategory + 1);
+          } else {
+            setGameState(false);
+            setMusicCategory(0);
+          }
+          setUserResponse('');
+          setNumberOfPointsPerRound(5);
+        }
       }}
     >
       next level

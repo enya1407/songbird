@@ -2,10 +2,10 @@ import React from 'react';
 import '../App.css';
 import Category from './Category';
 
-function Header({ gameScore, category, level }) {
+function Header({ gameScore, category, musicCategory }) {
   const allСategories = category.map((category, i) => {
-    const isActive = i === level;
-    return <Category category={category} isActive={isActive} />;
+    const isActive = i === musicCategory;
+    return <Category category={category} isActive={isActive} key={category} />;
   });
 
   return (
