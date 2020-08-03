@@ -1,36 +1,22 @@
 import React from 'react';
 import '../App.css';
-
-import stubPicture from '../assets/image/stub-picture.jpg';
-import loveMe from '../assets/sounds/love_me.mp3';
-import ReactAudioPlayer from 'react-audio-player';
+import Player from './Player';
 
 function Card({ userResponse }) {
-  // console.log('userResponse', userResponse?.image);
   return (
     <div className="answer-card__container">
       <div className="answer-card">
-        <img
-          src={userResponse?.image}
+        <div
+          style={{ backgroundImage: `url(${userResponse.image})` }}
           className="stub-picture"
-          alt="stub-picture"
         />
         <div className="title-song">
           <p className="question-name">{userResponse.name}</p>
-          <ReactAudioPlayer
-            src={loveMe}
-            className="music-track"
-            // autoPlay
-            controls
-          />
+          <p className="song-title">{userResponse.theSongTitle}</p>
+          <Player audio={userResponse.sound} />
         </div>
       </div>
-      <h3 className="answer-card__description">
-        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt,
-        explicabo.
-      </h3>
+      <h3 className="answer-card__description">{userResponse.description}</h3>
     </div>
   );
 }

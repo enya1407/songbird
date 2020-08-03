@@ -29,7 +29,7 @@ function СontinueButton({
         }
       }}
     >
-      next level
+      Next level
     </button>
   );
 }

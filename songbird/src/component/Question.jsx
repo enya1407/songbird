@@ -1,21 +1,23 @@
 import React from 'react';
 import '../App.css';
 import stubPicture from '../assets/image/stub-picture.jpg';
-import loveMe from '../assets/sounds/love_me.mp3';
-import ReactAudioPlayer from 'react-audio-player';
+import Player from './Player';
 
 function Question({ isFoundCorrectAnswer, currentElem }) {
   const artistName = isFoundCorrectAnswer ? currentElem.name : '******';
+  const artistImge = isFoundCorrectAnswer ? currentElem.image : stubPicture;
+
   return (
     <div className="question-container">
-      <img src={stubPicture} className="stub-picture" alt="stub-picture" />
+      <div
+        style={{ backgroundImage: `url(${artistImge})` }}
+        className="stub-picture"
+      />
       <div className="question title-song">
         <p className="question-name">{artistName}</p>
-        <ReactAudioPlayer
-          src={loveMe}
-          className="music-track music-track__question"
-          // autoPlay
-          controls
+        <Player
+          audio={currentElem.sound}
+          isFoundCorrectAnswer={isFoundCorrectAnswer}
         />
       </div>
     </div>

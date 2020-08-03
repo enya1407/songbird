@@ -8,7 +8,6 @@ import './App.css';
 
 function App() {
   const [gameState, setGameState] = useState(true);
-
   const [gameScore, setGameScore] = useState(0);
   const [musicCategory, setMusicCategory] = useState(0);
   const [isFoundCorrectAnswer, setIsFoundCorrectAnswer] = useState(false);
@@ -45,31 +44,33 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        gameScore={gameScore}
-        category={category}
-        musicCategory={musicCategory}
-      />
-      {gameState && (
-        <ContainerForTheGame
-          setGameState={setGameState}
-          data={data}
-          musicCategory={musicCategory}
-          setMusicCategory={setMusicCategory}
-          isFoundCorrectAnswer={isFoundCorrectAnswer}
-          setIsFoundCorrectAnswer={setIsFoundCorrectAnswer}
-          currentElem={currentElem}
-          numberOfPointsPerRound={numberOfPointsPerRound}
-          setNumberOfPointsPerRound={setNumberOfPointsPerRound}
-        />
-      )}
-      {!gameState && (
-        <ContainerForResults
-          setGameState={setGameState}
+      <div className="wrapper">
+        <Header
           gameScore={gameScore}
-          setGameScore={setGameScore}
+          category={category}
+          musicCategory={musicCategory}
         />
-      )}
+        {gameState && (
+          <ContainerForTheGame
+            setGameState={setGameState}
+            data={data}
+            musicCategory={musicCategory}
+            setMusicCategory={setMusicCategory}
+            isFoundCorrectAnswer={isFoundCorrectAnswer}
+            setIsFoundCorrectAnswer={setIsFoundCorrectAnswer}
+            currentElem={currentElem}
+            numberOfPointsPerRound={numberOfPointsPerRound}
+            setNumberOfPointsPerRound={setNumberOfPointsPerRound}
+          />
+        )}
+        {!gameState && (
+          <ContainerForResults
+            setGameState={setGameState}
+            gameScore={gameScore}
+            setGameScore={setGameScore}
+          />
+        )}
+      </div>
     </div>
   );
 }

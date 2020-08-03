@@ -39,7 +39,7 @@ function ContainerForTheGame({
           <Card userResponse={userResponse} />
         ) : (
           <div className="answer-card__container instruction">
-            Listen to the player and select the artist
+            Listen to an excerpt from the song and choose an artist
           </div>
         )}
       </div>
