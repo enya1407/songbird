@@ -1,7 +1,7 @@
 import React from 'react';
-import '../App.css';
+import styles from './Losing.module.scss';
 
-function Result({ setGameState, gameScore, setGameScore }) {
+function Losing({ setGameState, gameScore, setGameScore }) {
   const text =
     gameScore < 15
       ? 'Rather weak result.Try again!'
@@ -9,19 +9,19 @@ function Result({ setGameState, gameScore, setGameScore }) {
 
   return (
     <div>
-      <h2 className="result-text">
-        {text} <p className="logo-span4">{gameScore} from 30</p>
+      <h2 className={styles.text}>
+        {text} <p className={styles.text2}>{gameScore} from 30</p>
       </h2>
       <button
-        className="continue-button_active"
+        className={styles.button_active}
         onClick={() => {
           setGameState(true);
           setGameScore(0);
         }}
       >
-        Сontinue
+        Continue
       </button>
     </div>
   );
 }
-export default Result;
+export default Losing;

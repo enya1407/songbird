@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Question from './Question';
-import Answer from './Answer';
-import СontinueButton from './СontinueButton';
-import '../App.css';
-import Card from './Card';
+import Question from './Question/Question';
+import Answer from './Answer/Answer';
+import ContinueButton from '../ContinueButton/ContinueButton';
+import styles from './Game.module.scss';
+import Card from './Card/Card';
 
-function ContainerForTheGame({
+function Game({
   setGameState,
   data,
   musicCategory,
@@ -19,12 +19,12 @@ function ContainerForTheGame({
   const [userResponse, setUserResponse] = useState('');
 
   return (
-    <main className="App-main">
+    <main className={styles.main}>
       <Question
         isFoundCorrectAnswer={isFoundCorrectAnswer}
         currentElem={currentElem}
       />
-      <div className="response-container">
+      <div className={styles.response}>
         <Answer
           data={data}
           musicCategory={musicCategory}
@@ -38,12 +38,12 @@ function ContainerForTheGame({
         {userResponse ? (
           <Card userResponse={userResponse} />
         ) : (
-          <div className="answer-card__container instruction">
+          <div className={`${styles.card_container} ${styles.instruction}`}>
             Listen to an excerpt from the song and choose an artist
           </div>
         )}
       </div>
-      <СontinueButton
+      <ContinueButton
         setGameState={setGameState}
         setMusicCategory={setMusicCategory}
         musicCategory={musicCategory}
@@ -54,4 +54,4 @@ function ContainerForTheGame({
     </main>
   );
 }
-export default ContainerForTheGame;
+export default Game;

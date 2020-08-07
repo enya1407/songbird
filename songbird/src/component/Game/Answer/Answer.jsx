@@ -1,6 +1,6 @@
 import React from 'react';
-import '../App.css';
-import PossibleAnswer from './PossibleAnswer';
+import styles from './Answer.module.scss';
+import PossibleAnswer from './PossibleAnswer/PossibleAnswer';
 
 function Answer({
   data,
@@ -12,7 +12,7 @@ function Answer({
   numberOfPointsPerRound,
   setNumberOfPointsPerRound,
 }) {
-  const addAnswerOptions = data[musicCategory].map((el, index) => {
+  const addAnswerOptions = data[musicCategory].map((el) => {
     return (
       <PossibleAnswer
         el={el}
@@ -29,8 +29,8 @@ function Answer({
   });
 
   return (
-    <div className="answer-options">
-      <ul className="answer-list">{addAnswerOptions}</ul>
+    <div className={styles.options}>
+      <ul className={styles.list}>{addAnswerOptions}</ul>
     </div>
   );
 }

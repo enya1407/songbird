@@ -299,7 +299,7 @@ const data = [
       sound:
         'https://www.dropbox.com/s/rucsnkio3j70dri/creep-radiohead.mp3?dl=1',
       image: 'https://www.dropbox.com/s/4zr91l70axv8r4o/800x800bb.jpeg?dl=1',
-      description: `American singer, frontman of the band "Richard Cheese and Lounge Against the Machine" from Los Angeles (California). Real name Mark Jonathan Davis (Mark Jonathan Davis). The group is known for its humorous cover versions of songs by famous pop and rock musicians, performed in a manner reminiscent of the style of Frank Sinatra, Dean Martin and Tony Bennett.`,
+      description: `American singer, frontman of the band "Richard Cheese and Lounge Against the Machine" from Los Angeles (California). The group is known for its humorous cover versions of songs by famous pop and rock musicians, performed in a manner reminiscent of the style of Frank Sinatra, Dean Martin and Tony Bennett.`,
     },
     {
       id: 5,

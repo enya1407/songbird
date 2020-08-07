@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
-import correctAudio from '../assets/sounds/correct.mp3';
-import incorrectAudio from '../assets/sounds/error.mp3';
+import styles from './PossibleAnswer.module.scss';
+import correctAudio from '../../../../assets/sounds/correct.mp3';
+import incorrectAudio from '../../../../assets/sounds/error.mp3';
 
-function Answer({
+function PossibleAnswer({
   el,
   setUserResponse,
   currentElem,
@@ -23,15 +23,15 @@ function Answer({
     setAnswerSelected(false);
   }, [musicCategory]);
 
-  const indicatorColor = isCorrect ? 'indicator-success' : 'indicator-err';
+  const indicatorColor = isCorrect ? styles.success : styles.err;
 
   const indicatorAppearance = answerSelected
-    ? `${indicatorColor} response-indicator`
-    : 'response-indicator ';
+    ? `${indicatorColor} ${styles.indicator}`
+    : styles.indicator;
 
   return (
     <li
-      className="answer-link"
+      className={styles.item}
       onClick={() => {
         setUserResponse(el);
         if (!isFoundCorrectAnswer) {
@@ -51,4 +51,4 @@ function Answer({
     </li>
   );
 }
-export default Answer;
+export default PossibleAnswer;

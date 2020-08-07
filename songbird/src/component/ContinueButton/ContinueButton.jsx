@@ -1,8 +1,7 @@
 import React from 'react';
-import '../App.css';
-// import { Button } from 'antd';
+import styles from './ContinueButton.module.scss';
 
-function СontinueButton({
+function ContinueButton({
   setGameState,
   musicCategory,
   setMusicCategory,
@@ -11,8 +10,8 @@ function СontinueButton({
   isFoundCorrectAnswer,
 }) {
   const buttonStyle = isFoundCorrectAnswer
-    ? 'continue-button_active'
-    : 'continue-button';
+    ? styles.button_active
+    : styles.button;
   return (
     <button
       className={buttonStyle}
@@ -34,4 +33,4 @@ function СontinueButton({
   );
 }
 
-export default СontinueButton;
+export default ContinueButton;

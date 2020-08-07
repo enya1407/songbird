@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Header from './component/Header';
+import Header from './component/Header/Header';
 import { data, category } from './data';
-import ContainerForTheGame from './component/ContainerForTheGame';
-import ContainerForResults from './component/ContainerForResults';
-
-import './App.css';
+import Game from './component/Game/Game';
+import Results from './component/Results/Results';
+import styles from './App.module.scss';
 
 function App() {
   const [gameState, setGameState] = useState(true);
@@ -43,15 +42,15 @@ function App() {
   }, [isFoundCorrectAnswer]);
 
   return (
-    <div className="App">
-      <div className="wrapper">
+    <div className={styles.app}>
+      <div className={styles.wrapper}>
         <Header
           gameScore={gameScore}
           category={category}
           musicCategory={musicCategory}
         />
         {gameState && (
-          <ContainerForTheGame
+          <Game
             setGameState={setGameState}
             data={data}
             musicCategory={musicCategory}
@@ -64,7 +63,7 @@ function App() {
           />
         )}
         {!gameState && (
-          <ContainerForResults
+          <Results
             setGameState={setGameState}
             gameScore={gameScore}
             setGameScore={setGameScore}
@@ -77,6 +76,3 @@ function App() {
 
 export default App;
 
-// import ReactAudioPlayer from 'react-audio-player';
-// //...
-// <ReactAudioPlayer src="my_audio_file.ogg" autoPlay controls />;
