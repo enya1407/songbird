@@ -363,9 +363,9 @@ const data = [
     {
       id: 5,
       name: 'Wolfgang Amadeus Mozart',
-      theSongTitle: 'Requiem',
+      theSongTitle: 'Symphony No:40',
       sound:
-        'https://www.dropbox.com/s/3n89h50bd3vf3xf/VAMocart_-_Rekviem_%28skripka%29_%28ringon.site%29.mp3?dl=1',
+        'https://www.dropbox.com/s/candg9tjrnk4wvu/1308049830_mocart-simfoniya-no.-40-col-minor-molto-allegro.mp3?dl=1',
       image: 'https://www.dropbox.com/s/nee628b1fy9ma4t/Mozart.jpg?dl=1',
       description: `Austrian composer and virtuoso musician. One of the most popular classical composers, Mozart has had a great influence on world music culture.`,
     },

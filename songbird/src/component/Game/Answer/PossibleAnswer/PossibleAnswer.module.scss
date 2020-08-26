@@ -21,7 +21,8 @@
   cursor: pointer;
   padding: 12px 0 12px 25px;
   text-align: left;
+  background-color: #39495691;
 }
-.item {
-  background-color: #394956b3;
+.item:hover {
+  background-color: #394956;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Losing.module.scss';
 
+import ContinueButton from '../../ContinueButton/ContinueButton';
 function Losing({ setGameState, gameScore, setGameScore }) {
   const text =
     gameScore < 15

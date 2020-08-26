@@ -22,7 +22,7 @@ function App() {
       arr[i] = temp;
     }
     console.log(
-      'Правельный ответ в категории',
+      'Правильный ответ в категории',
       category[musicCategory],
       ':',
       arr[0].name
@@ -75,4 +75,3 @@ function App() {
 }
 
 export default App;
-

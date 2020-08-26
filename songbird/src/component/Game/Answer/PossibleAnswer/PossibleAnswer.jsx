@@ -35,14 +35,15 @@ function PossibleAnswer({
       onClick={() => {
         setUserResponse(el);
         if (!isFoundCorrectAnswer) {
-          setAnswerSelected(true);
           if (isCorrect) {
             setIsFoundCorrectAnswer(true);
             audioCorrect.play();
           } else {
             audioIncorrect.play();
-            setNumberOfPointsPerRound(numberOfPointsPerRound - 1);
+            if (!answerSelected)
+              setNumberOfPointsPerRound(numberOfPointsPerRound - 1);
           }
+          setAnswerSelected(true);
         }
       }}
     >

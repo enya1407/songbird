@@ -32,3 +32,9 @@
 .rhap_volume-bar-area .rhap_volume-bar {
   background-color: #616161;
 }
+.rhap_main-controls .rhap_play-pause-button,
+.rhap_progress-container,
+.rhap_button-clear,
+.rhap_volume-bar-area {
+  outline: none;
+}
